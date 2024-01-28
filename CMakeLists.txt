@@ -12,9 +12,6 @@ set(SOURCE
     ${PICO_APP}/application.c)
 
 set(INCLUDES
-    ${PICO_APP}/)
+    ${PICO_APP}/application.h)
 
-add_executable(2040BoneConductionHeadphones)
-
-target_sources(2040BoneConductionHeadphones ${SOURCE})
-target_include_directories(2040BoneConductionHeadphones ${INCLUDES})
+add_executable(2040BoneConductionHeadphones ${SOURCE} ${INCLUDES})
