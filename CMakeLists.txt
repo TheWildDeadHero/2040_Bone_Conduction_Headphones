@@ -1,9 +1,14 @@
-cmake_minimum_required(3.13)
+cmake_minimum_required(VERSION 3.13)
+
+# Include the GCC ARM compiler configuration
+include(arm-none-eabi.cmake)
+
+project(BoneConudctionHeadphones)
 
 set(PICO_SDK_DIR ${CMAKE_CURRENT_SOURCE_DIR}/submodules/pico-sdk/)
 set(PICO_APP ${CMAKE_CURRENT_SOURCE_DIR}/application/example1/) # TODO - add actual application
 
-include(PICO_SDK_DIR)
+add_subdirectory(${PICO_SDK_DIR})
 
 pico_sdk_init()
 
@@ -12,6 +17,6 @@ set(SOURCE
     ${PICO_APP}/application.c)
 
 set(INCLUDES
-    ${PICO_APP}/application.h)
+    ${PICO_APP}/)
 
 add_executable(2040BoneConductionHeadphones ${SOURCE} ${INCLUDES})
