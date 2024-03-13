@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "stdlib.h"
-#include "2040_Bone_Conduction_Headphones/pico.h"
+#include "pico/stdlib.h"
 
 int application(void);

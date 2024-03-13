@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 
-# Include the GCC ARM compiler configuration
+# Include the GCC ARM compiler configuration and Pico SDK
 include(arm-none-eabi.cmake)
+include(submodules/pico-sdk/pico_sdk_init.cmake)
 
 project(BoneConudctionHeadphones)
 
@@ -19,4 +20,9 @@ set(SOURCE
 set(INCLUDES
     ${PICO_APP}/)
 
+include_directories(${PICO_APP})
+
 add_executable(2040BoneConductionHeadphones ${SOURCE} ${INCLUDES})
+
+target_link_libraries(2040BoneConductionHeadphones pico_stdlib)
+pico_add_extra_outputs(2040BoneConductionHeadphones)
